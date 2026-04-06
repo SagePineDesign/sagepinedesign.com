@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Sage and Pine Landscape Design — Registered Landscape Architect in Colorado Springs, CO. Crafting outdoor spaces that blend with Colorado's natural beauty."/>
+<title>Sage & Pine Landscape Design | Colorado Springs, CO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  /* =====================
+     RESET & BASE
+  ===================== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --sage: #5C7A5C;
+    --sage-light: #8AAF8A;
+    --pine: #2D4A2D;
+    --cream: #F7F4EE;
+    --warm: #E8E2D4;
+    --text: #1A2A1A;
+    --muted: #5A6A5A;
+    --gold: #B8924A;
+    --gold-dark: #a37840;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+
+  /* =====================
+     NAVIGATION
+  ===================== */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: var(--pine);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .nav-logo-img {
+    width: 52px; height: 52px;
+    background: var(--warm);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  /* REPLACE the src below with your actual logo file, e.g. src="logo.png" */
+  .nav-logo-img img { width: 44px; height: 44px; object-fit: contain; }
+  .nav-brand { color: #fff; font-family: 'Playfair Display', serif; font-size: 17px; line-height: 1.2; }
+  .nav-brand span { display: block; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-light); font-weight: 300; }
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: var(--gold) !important; color: #fff !important; padding: 10px 22px; border-radius: 2px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--gold-dark) !important; }
+  /* Mobile nav toggle */
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .nav-toggle span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+
+  /* =====================
+     HERO
+  ===================== */
+  .hero {
+    position: relative;
+    height: 88vh;
+    min-height: 540px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    /* REPLACE with your hero image: background-image: url('hero.jpg'); */
+    background-color: #3a5a3a;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.72);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,38,20,0.85) 0%, rgba(20,38,20,0.2) 55%, transparent 100%);
+  }
+  .hero-content { position: relative; z-index: 2; padding: 0 80px 72px; max-width: 700px; }
+  .hero-eyebrow { color: var(--sage-light); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 400; margin-bottom: 16px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 62px); color: #fff; font-weight: 400; line-height: 1.1; margin-bottom: 20px; }
+  .hero-title em { font-style: italic; color: var(--sage-light); }
+  .hero-sub { color: rgba(255,255,255,0.72); font-size: 15px; font-weight: 300; max-width: 480px; margin-bottom: 36px; line-height: 1.8; }
+  .hero-btns { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: #fff; padding: 14px 32px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 500; transition: background 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-dark); }
+  .btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.45); padding: 13px 28px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; font-weight: 400; transition: all 0.2s; display: inline-block; }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+  /* =====================
+     TRUST BAR
+  ===================== */
+  .trust-bar {
+    background: var(--pine);
+    padding: 16px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.65); font-size: 12px; letter-spacing: 0.8px; }
+  .trust-item strong { color: var(--sage-light); font-weight: 500; }
+  .trust-dot { width: 4px; height: 4px; background: var(--sage); border-radius: 50%; flex-shrink: 0; }
+
+  /* =====================
+     INTRO / APPROACH
+  ===================== */
+  .intro { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; background: var(--cream); }
+  .intro-text { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+  .section-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 20px; }
+  .intro-text h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; line-height: 1.25; margin-bottom: 24px; color: var(--pine); }
+  .intro-text p { color: var(--muted); font-size: 15px; line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+  .text-link { color: var(--sage); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--sage-light); padding-bottom: 2px; font-weight: 500; display: inline-block; margin-top: 8px; }
+  .intro-visual {
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    /* REPLACE with your photo: background-image: url('about-photo.jpg'); */
+    background-color: var(--warm);
+    background-size: cover;
+    background-position: center;
+  }
+  .intro-badge {
+    position: absolute; bottom: 32px; left: 32px;
+    background: var(--pine); color: #fff;
+    padding: 16px 20px; border-radius: 2px;
+  }
+  .intro-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; line-height: 1; }
+  .intro-badge span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-light); }
+
+  /* =====================
+     SERVICES
+  ===================== */
+  .services { background: var(--warm); padding: 88px 80px; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: var(--pine); margin-bottom: 12px; }
+  .section-header p { color: var(--muted); font-size: 15px; font-weight: 300; max-width: 520px; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .service-card { background: var(--cream); padding: 40px 36px; position: relative; overflow: hidden; cursor: pointer; transition: background 0.25s; }
+  .service-card:hover { background: #fff; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--sage); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-num { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--warm); font-weight: 400; line-height: 1; margin-bottom: 20px; transition: color 0.25s; }
+  .service-card:hover .service-num { color: var(--sage-light); }
+  .service-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--pine); margin-bottom: 12px; }
+  .service-card p { font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+  /* =====================
+     PORTFOLIO
+  ===================== */
+  .portfolio { background: var(--pine); }
+  .portfolio-header { padding: 64px 80px 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .portfolio-header h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: #fff; }
+  .portfolio-header a { color: var(--sage-light); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 2px; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    padding: 0 80px;
+  }
+  .port-item { position: relative; overflow: hidden; aspect-ratio: 4/5; cursor: pointer; }
+  /* REPLACE each background-color with: background-image: url('project1.jpg'); */
+  .port-item:nth-child(1) { background-color: #3a5a3a; }
+  .port-item:nth-child(2) { background-color: #4a6640; }
+  .port-item:nth-child(3) { background-color: #2D4A2D; }
+  .port-item:nth-child(4) { background-color: #5C7A5C; }
+  .port-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .port-item:hover img { transform: scale(1.05); }
+  .port-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 48px 20px 20px; background: linear-gradient(to top, rgba(20,38,20,0.92), transparent); }
+  .port-label h4 { color: #fff; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 400; margin-bottom: 2px; }
+  .port-label span { color: var(--sage-light); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .portfolio-footer { padding: 28px 80px 56px; }
+  .btn-outline-light { display: inline-block; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); padding: 12px 28px; border-radius: 2px; text-decoration: none; font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase; transition: all 0.2s; }
+  .btn-outline-light:hover { color: #fff; border-color: rgba(255,255,255,0.7); }
+
+  /* =====================
+     TESTIMONIAL
+  ===================== */
+  .testimonial { background: var(--cream); padding: 96px 80px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+  .testi-left h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--pine); line-height: 1.2; margin-bottom: 12px; }
+  .testi-left p { font-size: 14px; color: var(--muted); font-weight: 300; }
+  .quote-mark { font-family: 'Playfair Display', serif; font-size: 80px; color: var(--sage-light); line-height: 0.7; margin-bottom: 24px; display: block; }
+  .testi-quote { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--pine); line-height: 1.6; font-style: italic; margin-bottom: 28px; font-weight: 400; }
+  .testi-stars { color: var(--gold); font-size: 14px; letter-spacing: 3px; margin-bottom: 16px; }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Playfair Display', serif; font-size: 16px; flex-shrink: 0; }
+  .testi-name strong { display: block; font-size: 14px; font-weight: 500; color: var(--pine); }
+  .testi-name span { font-size: 12px; color: var(--muted); }
+
+  /* =====================
+     CTA SECTION
+  ===================== */
+  .cta-section { background: var(--pine); padding: 96px 80px; text-align: center; }
+  .cta-section .section-label { color: var(--sage-light); }
+  .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: #fff; margin-bottom: 16px; }
+  .cta-section p { color: rgba(255,255,255,0.62); font-size: 15px; font-weight: 300; max-width: 500px; margin: 0 auto 40px; }
+  .cta-form { display: flex; max-width: 480px; margin: 0 auto; }
+  .cta-form input { flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-right: none; padding: 14px 20px; color: #fff; font-family: 'Jost', sans-serif; font-size: 14px; outline: none; }
+  .cta-form input::placeholder { color: rgba(255,255,255,0.45); }
+  .cta-form button { background: var(--gold); color: #fff; border: none; padding: 14px 28px; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; font-weight: 500; white-space: nowrap; transition: background 0.2s; }
+  .cta-form button:hover { background: var(--gold-dark); }
+  .cta-note { color: rgba(255,255,255,0.35); font-size: 11px; margin-top: 14px; }
+
+  /* =====================
+     FOOTER
+  ===================== */
+  footer { background: #1A2A1A; padding: 64px 80px 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .foot-brand { color: rgba(255,255,255,0.6); font-size: 13px; line-height: 1.9; font-weight: 300; }
+  .foot-brand strong { display: block; font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 12px; font-weight: 400; }
+  .foot-contact { color: rgba(255,255,255,0.35); font-size: 12px; margin-top: 16px; line-height: 1.8; }
+  .foot-col h4 { color: var(--sage-light); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .foot-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; font-weight: 300; }
+  .foot-col a:hover { color: rgba(255,255,255,0.9); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 12px; }
+  .footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+  .footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+
+  /* =====================
+     RESPONSIVE
+  ===================== */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--pine); padding: 24px; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: flex; }
+    .hero-content { padding: 0 24px 48px; }
+    .intro { grid-template-columns: 1fr; }
+    .intro-text { padding: 56px 24px; }
+    .intro-visual { min-height: 320px; }
+    .services { padding: 64px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-header { padding: 48px 24px 32px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+    .portfolio-footer { padding: 24px 24px 48px; }
+    .testimonial { grid-template-columns: 1fr; padding: 64px 24px; gap: 40px; }
+    .cta-section { padding: 64px 24px; }
+    .cta-form { flex-direction: column; }
+    .cta-form input { border-right: 1px solid rgba(255,255,255,0.2); border-bottom: none; }
+    footer { padding: 48px 24px 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .trust-bar { gap: 16px; padding: 16px 24px; }
+    .trust-dot { display: none; }
+  }
+  @media (max-width: 480px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================
+     NAVIGATION
+===================== -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-img">
+      <!-- REPLACE with: <img src="logo.png" alt="Sage and Pine Logo"/> -->
+      <svg viewBox="0 0 80 80" width="44" height="44" aria-hidden="true">
+        <rect width="80" height="80" rx="10" fill="#2D4A2D"/>
+        <polygon points="40,10 55,45 25,45" fill="#8AAF8A"/>
+        <polygon points="40,22 58,52 22,52" fill="#5C7A5C"/>
+        <rect x="35" y="52" width="10" height="18" rx="2" fill="#5C7A5C"/>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      Sage &amp; Pine
+      <span>Landscape Design</span>
+    </div>
+  </a>
+
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Book Consultation</a>
+  </div>
+</nav>
+
+
+<!-- =====================
+     HERO
+     HOW TO ADD YOUR PHOTO:
+     Replace the .hero-bg style below with:
+     style="background-image: url('hero.jpg');"
+     and upload hero.jpg to your Hostinger file manager
+===================== -->
+<section class="hero">
+  <div class="hero-bg" style="
+    background-image: url('hero.jpg');
+    background-color: #3a5a3a;
+  "></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Colorado Springs · Registered Landscape Architect</p>
+    <h1 class="hero-title">Built by Nature.<br><em>Perfected by Design.</em></h1>
+    <p class="hero-sub">We craft landscapes that feel inevitable — as if they've always belonged to the Colorado terrain. Every stone, plant, and grade placed with intention.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Start Your Project</a>
+      <a href="#portfolio" class="btn-ghost">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================
+     TRUST BAR
+===================== -->
+<div class="trust-bar">
+  <div class="trust-item"><strong>Registered</strong>&nbsp;Landscape Architect</div>
+  <div class="trust-dot"></div>
+  <div class="trust-item">Serving&nbsp;<strong>Colorado Springs</strong>&nbsp;&amp; surrounds</div>
+  <div class="trust-dot"></div>
+  <div class="trust-item"><strong>Eco-friendly</strong>&nbsp;design practices</div>
+  <div class="trust-dot"></div>
+  <div class="trust-item">5-star&nbsp;<strong>rated</strong>&nbsp;by local homeowners</div>
+</div>
+
+
+<!-- =====================
+     ABOUT / APPROACH
+===================== -->
+<section class="intro" id="about">
+  <div class="intro-text">
+    <p class="section-label">Our philosophy</p>
+    <h2>Landscapes that belong<br>to their surroundings</h2>
+    <p>At Sage &amp; Pine, our Registered Landscape Architect Tyler Knab specializes in crafting outdoor spaces that seamlessly blend with Colorado's natural character. We design landscapes that enhance your property aesthetically while remaining sustainable and functional for the long term.</p>
+    <p>Every project begins with listening — understanding how you live, what you love, and how Colorado's climate and terrain should inform every decision.</p>
+    <a href="#contact" class="text-link">Start a conversation →</a>
+  </div>
+
+  <!--
+    HOW TO ADD YOUR PHOTO HERE:
+    Replace the inline style with: style="background-image: url('about.jpg');"
+    and upload about.jpg to Hostinger
+  -->
+  <div class="intro-visual" style="background-image: url('about.jpg');">
+    <div class="intro-badge">
+      <strong>Tyler Knab</strong>
+      <span>RLA · Founder</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================
+     SERVICES
+===================== -->
+<section class="services" id="services">
+  <div class="section-header">
+    <h2>What we design</h2>
+    <p>From concept sketch to finished landscape, we handle every phase of your outdoor transformation.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Landscape Design</h3>
+      <p>Full-service design plans tailored to Colorado's climate, your property's unique topography, and your lifestyle — from xeriscape to lush native gardens.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Outdoor Living Spaces</h3>
+      <p>Patios, pergolas, fire features, and outdoor kitchens designed to extend your living space into the Colorado outdoors naturally.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Grading &amp; Drainage</h3>
+      <p>Expert site analysis and grading plans that work with the land — protecting your foundation and creating beautiful, functional transitions.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3>Plant Selection</h3>
+      <p>Curated plant palettes of Colorado natives and climate-adapted species that thrive with minimal water and care while looking exceptional year-round.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <h3>Irrigation Planning</h3>
+      <p>Water-smart irrigation design that satisfies HOA requirements and local water restrictions without sacrificing beauty or plant health.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <h3>Construction Documents</h3>
+      <p>Stamped construction drawings ready for permits and contractor bidding — giving you the documentation needed to bring your design to life.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================
+     PORTFOLIO
+     HOW TO ADD PHOTOS:
+     Replace each port-item's background-color with:
+     style="background-image: url('project1.jpg');"
+     and add <img src="project1.jpg" alt="..."/> inside each .port-item
+===================== -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header">
+    <h2>Recent work</h2>
+    <a href="mailto:hello@sagepinedesign.com">See all projects →</a>
+  </div>
+  <div class="portfolio-grid">
+    <div class="port-item" style="background-color:#3a5a3a; background-image:url('project1.jpg'); background-size:cover; background-position:center;">
+      <div class="port-label">
+        <h4>Mountain Modern Retreat</h4>
+        <span>Black Forest · 2024</span>
+      </div>
+    </div>
+    <div class="port-item" style="background-color:#4a6640; background-image:url('project2.jpg'); background-size:cover; background-position:center;">
+      <div class="port-label">
+        <h4>Xeriscape Courtyard</h4>
+        <span>Broadmoor · 2024</span>
+      </div>
+    </div>
+    <div class="port-item" style="background-color:#2D4A2D; background-image:url('project3.jpg'); background-size:cover; background-position:center;">
+      <div class="port-label">
+        <h4>Native Garden Sanctuary</h4>
+        <span>Colorado Springs · 2023</span>
+      </div>
+    </div>
+    <div class="port-item" style="background-color:#5C7A5C; background-image:url('project4.jpg'); background-size:cover; background-position:center;">
+      <div class="port-label">
+        <h4>Terrace Garden Renovation</h4>
+        <span>Monument · 2023</span>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-footer">
+    <a href="mailto:hello@sagepinedesign.com" class="btn-outline-light">Inquire about a project</a>
+  </div>
+</section>
+
+
+<!-- =====================
+     TESTIMONIAL
+     UPDATE with real client names/quotes
+===================== -->
+<section class="testimonial">
+  <div class="testi-left">
+    <p class="section-label">Client stories</p>
+    <h2>Landscapes that<br>speak for themselves</h2>
+    <p>Real words from Colorado Springs homeowners who trusted Sage &amp; Pine to transform their outdoor spaces.</p>
+  </div>
+  <div>
+    <span class="quote-mark">"</span>
+    <p class="testi-quote">Tyler's creative designs, paired with great time management and clear communication, transform outdoor spaces into beautiful, functional landscapes that feel completely at home in Colorado.</p>
+    <div class="testi-stars">★ ★ ★ ★ ★</div>
+    <div class="testi-author">
+      <div class="testi-avatar" aria-hidden="true">J</div>
+      <div class="testi-name">
+        <strong>Jennifer M.</strong>
+        <span>Homeowner, Black Forest</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================
+     CONTACT / CTA
+     UPDATE the form action to your Hostinger form endpoint or email
+===================== -->
+<section class="cta-section" id="contact">
+  <p class="section-label">Ready to begin?</p>
+  <h2>Your landscape starts with a conversation</h2>
+  <p>Tell us your vision and we'll schedule a complimentary consultation at your property in the Colorado Springs area.</p>
+  <!--
+    OPTION 1 (simple): Change action to your email using Formspree:
+    <form action="https://formspree.io/f/YOUR_ID" method="POST" class="cta-form">
+    Sign up free at formspree.io, get your form ID, paste it above.
+
+    OPTION 2: Use Hostinger's built-in form builder in the website builder.
+  -->
+  <form class="cta-form" onsubmit="handleSubmit(event)">
+    <input type="email" name="email" placeholder="Your email address" required/>
+    <button type="submit">Request Consultation</button>
+  </form>
+  <p class="cta-note">No obligation. We'll reach out within 24 hours.</p>
+</section>
+
+
+<!-- =====================
+     FOOTER
+     UPDATE contact details, social links
+===================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="foot-brand">
+      <strong>Sage &amp; Pine Landscape Design</strong>
+      A Registered Landscape Architect studio crafting thoughtful outdoor spaces for Colorado homeowners. We believe every landscape should feel like it's always been there.
+      <div class="foot-contact">
+        Colorado Springs, CO<br>
+        <!-- UPDATE with your real phone and email -->
+        (719) 555-0100 &nbsp;·&nbsp; hello@sagepinedesign.com
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="#services">Landscape Design</a>
+      <a href="#services">Outdoor Living</a>
+      <a href="#services">Xeriscape</a>
+      <a href="#services">Plant Selection</a>
+      <a href="#services">Irrigation</a>
+    </div>
+    <div class="foot-col">
+      <h4>Studio</h4>
+      <a href="#about">About Tyler</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Our Process</a>
+      <a href="#contact">Testimonials</a>
+    </div>
+    <div class="foot-col">
+      <h4>Connect</h4>
+      <!-- UPDATE with your real social URLs -->
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://houzz.com" target="_blank" rel="noopener">Houzz</a>
+      <a href="mailto:hello@sagepinedesign.com">Email Us</a>
+      <a href="#contact">Book a Call</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Sage and Pine Landscape Design LLC · Colorado Springs, CO</p>
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+
+<script>
+  // Simple form handler — replace with Formspree or Hostinger forms for real email delivery
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = 'Request Sent!';
+    btn.style.background = '#5C7A5C';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Request Consultation';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+</script>
+
+</body>
+</html>
